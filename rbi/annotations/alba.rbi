@@ -5,8 +5,8 @@ module Alba::Resource::ClassMethods
     params(
       name: T.any(String, Symbol),
       condition: T.nilable(Proc),
-      resource: T.nilable(T.any(Module, String, Proc)),
-      serializer: T.nilable(T.any(Module, String, Proc)),
+      resource: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
+      serializer: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
       source: T.nilable(Proc),
       key: T.nilable(T.any(String, Symbol)),
       with_traits: T.nilable(T.any(Symbol, T::Array[Symbol])),
@@ -43,8 +43,8 @@ module Alba::Resource::ClassMethods
     params(
       name: T.any(String, Symbol),
       condition: T.nilable(Proc),
-      resource: T.nilable(T.any(Module, String, Proc)),
-      serializer: T.nilable(T.any(Module, String, Proc)),
+      resource: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
+      serializer: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
       source: T.nilable(Proc),
       key: T.nilable(T.any(String, Symbol)),
       with_traits: T.nilable(T.any(Symbol, T::Array[Symbol])),
@@ -59,8 +59,8 @@ module Alba::Resource::ClassMethods
     params(
       name: T.any(String, Symbol),
       condition: T.nilable(Proc),
-      resource: T.nilable(T.any(Module, String, Proc)),
-      serializer: T.nilable(T.any(Module, String, Proc)),
+      resource: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
+      serializer: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
       source: T.nilable(Proc),
       key: T.nilable(T.any(String, Symbol)),
       with_traits: T.nilable(T.any(Symbol, T::Array[Symbol])),
@@ -81,8 +81,8 @@ module Alba::Resource::ClassMethods
     params(
       name: T.any(String, Symbol),
       condition: T.nilable(Proc),
-      resource: T.nilable(T.any(Module, String, Proc)),
-      serializer: T.nilable(T.any(Module, String, Proc)),
+      resource: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
+      serializer: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
       source: T.nilable(Proc),
       key: T.nilable(T.any(String, Symbol)),
       with_traits: T.nilable(T.any(Symbol, T::Array[Symbol])),
@@ -122,7 +122,7 @@ module Alba::Resource::ClassMethods
   sig do
     params(
       handler: T.nilable(Symbol),
-      block: T.nilable(T.proc.params(error: T.untyped, object: T.untyped, key: T.untyped, attribute: T.untyped, resource_class: T.untyped).returns(T::Array[T.untyped])),
+      block: T.nilable(T.proc.params(error: T.untyped, object: T.untyped, key: T.untyped, attribute: T.untyped, resource_class: T.untyped).returns(T.untyped)),
     ).void
   end
   def on_error(handler = nil, &block); end
@@ -138,8 +138,8 @@ module Alba::Resource::ClassMethods
     params(
       name: T.any(String, Symbol),
       condition: T.nilable(Proc),
-      resource: T.nilable(T.any(Module, String, Proc)),
-      serializer: T.nilable(T.any(Module, String, Proc)),
+      resource: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
+      serializer: T.nilable(T.any(T::Class[Alba::Resource], String, Proc)),
       source: T.nilable(Proc),
       key: T.nilable(T.any(String, Symbol)),
       with_traits: T.nilable(T.any(Symbol, T::Array[Symbol])),
